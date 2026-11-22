@@ -545,13 +545,6 @@ footer small{color:var(--mute);display:block;width:100%;font-size:13px}
         <label for="f-name">الاسم
           <input id="f-name" name="name" autocomplete="name" placeholder="اسمك" required>
         </label>
-        <label for="f-slot">الفترة التي تناسبك
-          <select id="f-slot" name="slot">
-            <option>بنات فقط (8:30 – 11:00 صباحاً)</option>
-            <option>رجال فقط (11:30 صباحاً – 2:30 ظهراً)</option>
-            <option>مختلط عائلي (3:00 عصراً – 10:00 مساءً)</option>
-          </select>
-        </label>
         <label for="f-msg">سؤالك
           <textarea id="f-msg" name="msg" placeholder="مثلاً: شو أنواع الاشتراكات المتوفرة؟"></textarea>
         </label>
@@ -744,7 +737,7 @@ document.getElementById("askForm").addEventListener("submit", e => {
   e.preventDefault();
   const name=document.getElementById("f-name"), toast=document.getElementById("toast");
   if(!name.value.trim()){ toast.textContent="اكتب اسمك لنعرف مين عم يسأل."; name.focus(); return; }
-  const text = "مرحباً APEX FITNESS\nالاسم: "+name.value.trim()+"\nالفترة: "+document.getElementById("f-slot").value+(document.getElementById("f-msg").value.trim()?"\nالسؤال: "+document.getElementById("f-msg").value.trim():"");
+  const text = "مرحباً APEX FITNESS\nالاسم: "+name.value.trim()+(document.getElementById("f-msg").value.trim()?"\nالسؤال: "+document.getElementById("f-msg").value.trim():"");
   const url = "https://wa.me/"+SITE.whatsapp+"?text="+encodeURIComponent(text);
   const a=document.createElement("a"); a.href=url; a.target="_blank"; a.rel="noopener"; document.body.appendChild(a); a.click(); a.remove();
   toast.textContent="جهّزنا رسالتك على واتساب. إذا ما انفتح، اتصل على "+SITE.phone+".";
