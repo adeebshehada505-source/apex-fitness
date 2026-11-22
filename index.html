@@ -1,0 +1,753 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="APEX FITNESS نادي رياضي في السقيلبية، ريف حماة. أوقات الدوام، المدربون، إرشادات النادي، المتجر، وللاستفسار 0985301804.">
+<meta name="theme-color" content="#0D0D0D">
+<meta property="og:title" content="APEX FITNESS | السقيلبية">
+<meta property="og:description" content="كل تمرين خطوة نحو القمّة. نادي رياضي في السقيلبية، ريف حماة.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/gym-3.webp">
+<meta property="og:locale" content="ar_SY">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ExerciseGym","name":"APEX FITNESS","telephone":"+963985301804","address":{"@type":"PostalAddress","addressLocality":"السقيلبية","addressRegion":"حماة","addressCountry":"SY"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","opens":"08:30","closes":"22:00"}]}</script>
+<title>APEX FITNESS السقيلبية</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Rajdhani:wght@500;600;700&display=swap">
+<style>
+/* Layout: dark gym-floor page, gold diagonal "apex" slashes as the only ornament; RTL, single-column on phones */
+:root{
+  --ink:#0D0D0D;        /* brand black */
+  --coal:#161616;       /* raised surface */
+  --charcoal:#2B2B2B;   /* brand charcoal, lines */
+  --gold:#D4AF37;       /* brand gold */
+  --gold-soft:rgba(212,175,55,.14);
+  --white:#FFFFFF;
+  --mute:#A9A59A;       /* warm grey, biased to gold */
+  --font-ar:"Almarai","Segoe UI",Tahoma,sans-serif;
+  --font-lat:"Rajdhani","Almarai","Segoe UI",sans-serif;
+  --wrap:1160px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--ink);color:var(--white);font-family:var(--font-ar);font-size:16px;line-height:1.75;margin:0;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--ink)}
+a{color:inherit}
+img{max-width:100%;display:block}
+.lat{font-family:var(--font-lat);direction:ltr;unicode-bidi:isolate}
+.num{font-family:var(--font-lat);font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-weight:800;line-height:1.25;text-wrap:balance;margin:0}
+p{margin:0}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+
+/* ---------- header ---------- */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(13,13,13,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--charcoal)}
+.top .wrap{display:flex;align-items:center;gap:20px;padding-block:12px}
+.brand img{height:42px;width:auto}
+.nav{display:flex;gap:4px;margin-inline-start:auto}
+.nav a{text-decoration:none;color:var(--mute);font-size:15px;padding:8px 12px;border-radius:6px}
+.nav a:hover{color:var(--white);background:var(--coal)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;font-weight:700;font-family:var(--font-ar);font-size:16px;border-radius:8px;padding:12px 22px;border:1.5px solid var(--gold);cursor:pointer;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn-gold{background:var(--gold);color:var(--ink)}
+.btn-ghost{background:transparent;color:var(--gold)}
+.btn-ghost:hover{background:var(--gold-soft)}
+.btn svg{width:18px;height:18px;flex:none}
+.menu-btn{display:none;margin-inline-start:auto;background:none;border:1px solid var(--charcoal);color:var(--white);border-radius:8px;width:44px;height:44px;cursor:pointer}
+.menu-btn svg{width:22px;height:22px}
+@media (max-width:860px){
+  .nav{display:none;position:absolute;top:100%;inset-inline:0;flex-direction:column;background:var(--ink);border-bottom:1px solid var(--charcoal);padding:8px max(16px,env(safe-area-inset-left,0px)) 16px}
+  .nav.open{display:flex}
+  .nav a{font-size:17px;padding:12px}
+  .menu-btn{display:inline-grid;place-items:center}
+  .top .call-top{display:none}
+}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--charcoal)}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;padding-block:72px 84px}
+.hero-mark{position:absolute;z-index:1;inset-inline-start:-6%;bottom:-18%;width:min(62vw,720px);opacity:.09;pointer-events:none}
+.slash{position:absolute;z-index:1;background:var(--gold);width:14px;height:340px;transform:rotate(28deg);pointer-events:none}
+.slash.s1{top:-60px;inset-inline-end:6%}
+.slash.s2{top:-30px;inset-inline-end:calc(6% + 34px);opacity:.45;width:6px}
+.place{display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-size:15px;border:1px solid rgba(212,175,55,.4);border-radius:999px;padding:5px 14px;margin-bottom:22px}
+.place svg{width:16px;height:16px}
+.hero h1{font-size:clamp(2.6rem,6.4vw,4.9rem);letter-spacing:-.5px}
+.hero h1 .l1{display:block;color:#CFCBC2;font-weight:400;font-size:.62em}
+.hero h1 .gold{color:var(--gold)}
+.hero .ar-tag{font-size:clamp(1.15rem,2.2vw,1.45rem);margin-top:18px;font-weight:700}
+.hero .ar-tag b{color:var(--gold)}
+.tagline{font-family:var(--font-lat);font-weight:700;letter-spacing:.42em;color:var(--gold);font-size:13px;margin-top:10px;direction:ltr;text-align:right}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.hero-photo{position:relative;margin:0;justify-self:end;width:min(100%,420px);aspect-ratio:3/4;max-width:100%}
+.hero-photo img:first-child{width:100%;height:100%;object-fit:cover;clip-path:polygon(18% 0,100% 0,100% 100%,0 100%,0 22%);filter:saturate(.85) contrast(1.05)}
+.hero-photo::after{content:"";position:absolute;inset:0;clip-path:polygon(18% 0,100% 0,100% 100%,0 100%,0 22%);background:linear-gradient(180deg,transparent 55%,rgba(13,13,13,.85));pointer-events:none}
+.hero-badge{position:absolute;z-index:2;bottom:18px;inset-inline-end:18px;width:110px}
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:1fr;padding-block:40px 56px;gap:28px}
+  .hero-photo{justify-self:stretch;width:100%;aspect-ratio:4/3}
+  .hero-photo img:first-child{object-position:center 60%}
+  .hero-badge{width:84px}
+  .slash{height:220px}
+}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:repeat(2,240px);gap:12px}
+.gallery figure{margin:0;position:relative;overflow:hidden;border-radius:12px;border:1px solid var(--charcoal);min-width:0}
+.gallery figure:first-child{grid-row:span 2}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.gallery figure:hover img{transform:scale(1.04)}
+.gallery figcaption{position:absolute;inset:auto 0 0;padding:28px 14px 10px;background:linear-gradient(180deg,transparent,rgba(13,13,13,.9));font-size:14px;font-weight:700}
+@media (max-width:760px){.gallery{grid-template-columns:1fr 1fr;grid-template-rows:none;grid-auto-rows:170px}.gallery figure:first-child{grid-column:span 2;grid-row:span 2}}
+
+/* store */
+.demo-note{display:flex;gap:10px;align-items:center;background:var(--gold-soft);border:1px solid rgba(212,175,55,.45);border-radius:10px;padding:12px 16px;margin-bottom:22px;font-size:15px}
+.demo-note b{color:var(--gold)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{font:inherit;font-size:15px;font-weight:700;background:var(--coal);color:var(--mute);border:1px solid var(--charcoal);border-radius:999px;padding:7px 16px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.prod{background:var(--coal);border:1px solid var(--charcoal);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.prod .art{aspect-ratio:1/1;background:radial-gradient(circle at 50% 65%,#2a2412,#121212 70%);display:grid;place-items:center;position:relative}
+.prod .art svg{width:62%;height:62%}
+.prod .tag{position:absolute;top:10px;inset-inline-start:10px;background:var(--ink);color:var(--gold);border:1px solid rgba(212,175,55,.5);font-size:12px;font-weight:700;border-radius:999px;padding:1px 10px}
+.prod .pbody{padding:16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.prod h3{font-size:17px}
+.prod p{color:var(--mute);font-size:14px}
+.prod .price{color:var(--gold);font-weight:700;font-size:14px;margin-top:auto;padding-top:6px}
+.prod .add{margin-top:8px;padding:9px 12px;font-size:15px;width:100%}
+@media (max-width:1000px){.products{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:760px){.products{grid-template-columns:repeat(2,1fr);gap:10px}.prod .pbody{padding:12px}.prod h3{font-size:15px}}
+.cart-fab{position:fixed;z-index:45;bottom:calc(16px + env(safe-area-inset-bottom,0px));inset-inline-end:calc(16px + env(safe-area-inset-right,0px));display:flex;align-items:center;gap:8px;background:var(--white);color:var(--ink);border:none;border-radius:999px;padding:12px 18px;font:inherit;font-weight:800;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.5)}
+.cart-fab svg{width:20px;height:20px}
+.cart-fab .count{background:var(--gold);border-radius:999px;min-width:24px;height:24px;display:grid;place-items:center;font-size:13px;padding:0 6px}
+.drawer{position:fixed;z-index:70;inset:0;display:flex;justify-content:flex-start;background:rgba(0,0,0,.6)}
+.drawer .sheet{background:var(--ink);border-inline-end:1px solid var(--charcoal);width:min(420px,100%);height:100%;display:flex;flex-direction:column;padding:calc(20px + env(safe-area-inset-top,0px)) 20px calc(20px + env(safe-area-inset-bottom,0px))}
+.drawer header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.drawer h3{font-size:22px}
+.x{background:none;border:1px solid var(--charcoal);color:var(--white);width:40px;height:40px;border-radius:8px;cursor:pointer;font-size:20px}
+.lines{flex:1;overflow:auto;display:grid;align-content:start;gap:10px}
+.line{display:flex;align-items:center;gap:12px;background:var(--coal);border:1px solid var(--charcoal);border-radius:10px;padding:10px 12px}
+.line .nm{flex:1;min-width:0;font-weight:700;font-size:15px}
+.qty{display:flex;align-items:center;gap:6px}
+.qty button{width:30px;height:30px;border-radius:6px;border:1px solid var(--charcoal);background:var(--ink);color:var(--white);cursor:pointer;font-size:16px}
+.empty{color:var(--mute);text-align:center;padding:40px 0}
+.drawer .foot{display:grid;gap:10px;padding-top:14px;border-top:1px solid var(--charcoal);margin-top:14px}
+.drawer .foot p{color:var(--mute);font-size:13px}
+
+/* ---------- sections ---------- */
+section.block{padding-block:88px}
+.eyebrow{display:inline-block;background:var(--gold);color:var(--ink);font-weight:800;font-size:15px;padding:4px 14px;border-radius:6px;margin-bottom:16px}
+.sec-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px 40px;margin-bottom:40px}
+.sec-head h2{font-size:clamp(1.9rem,4vw,2.8rem)}
+.sec-head h2 .gold{color:var(--gold)}
+.sec-head p{color:var(--mute);max-width:46ch}
+.alt{background:linear-gradient(180deg,#111 0%,var(--ink) 100%);border-block:1px solid var(--charcoal)}
+
+/* about features */
+.feat{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.feat article{background:var(--coal);border:1px solid var(--charcoal);border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.ico{width:52px;height:52px;border-radius:10px;background:var(--gold);color:var(--ink);display:grid;place-items:center;flex:none}
+.ico svg{width:26px;height:26px}
+.feat h3{font-size:19px}
+.feat p{color:var(--mute);font-size:15px}
+.quote{margin-top:28px;display:flex;align-items:center;gap:16px;border:1px dashed rgba(212,175,55,.5);border-radius:10px;padding:18px 22px;color:#E9E6DE}
+.quote strong{color:var(--gold)}
+@media (max-width:960px){.feat{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.feat{grid-template-columns:1fr}}
+
+/* hours */
+.hours{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.slot{position:relative;background:var(--coal);border:1px solid var(--charcoal);border-inline-start:4px solid var(--gold);border-radius:12px;padding:26px 24px;display:grid;grid-template-columns:auto 1fr;gap:6px 18px;align-items:center;transition:border-color .2s, box-shadow .2s}
+.slot .ico{grid-row:span 2}
+.slot h3{font-size:24px}
+.slot h3 small{color:var(--gold);font-size:15px;font-weight:700;margin-inline-start:6px}
+.slot .time{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px;color:var(--mute);font-size:15px}
+.slot .time .num{color:var(--gold);font-size:26px;font-weight:700;line-height:1}
+.slot.now{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold),0 10px 40px -12px rgba(212,175,55,.45)}
+.slot .badge{position:absolute;top:-12px;inset-inline-end:16px;background:var(--gold);color:var(--ink);font-size:13px;font-weight:800;border-radius:999px;padding:2px 12px}
+.hours-foot{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between;margin-top:22px}
+.note{border:1px dashed rgba(212,175,55,.55);border-radius:8px;padding:10px 18px;font-weight:700}
+.status{color:var(--mute);font-size:15px}
+.status b{color:var(--white)}
+@media (max-width:960px){.hours{grid-template-columns:1fr}}
+
+/* coaches */
+.coaches{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.coach{position:relative;overflow:hidden;background:var(--coal);border:1px solid var(--charcoal);border-radius:14px;display:grid;grid-template-columns:42% 1fr;min-height:360px}
+.coach .photo{position:relative;background:radial-gradient(circle at 50% 70%,rgba(212,175,55,.35),transparent 65%);display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
+.coach .photo img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.coach .body{padding:28px 26px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.coach .role{color:var(--gold);font-weight:700;font-size:14px}
+.coach h3{font-size:30px}
+.coach .cred{border-inline-start:3px solid var(--gold);padding-inline-start:12px;color:#E9E6DE;font-size:15px}
+.coach .cred .lat{display:block;color:var(--mute);font-size:14px}
+.coach .extra{color:var(--mute);font-size:14px}
+.coach .contact{margin-top:auto;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.coach .contact .btn{padding:10px 16px;font-size:15px}
+.coach .site{color:var(--gold);font-size:15px;text-decoration:none}
+@media (max-width:960px){.coaches{grid-template-columns:1fr}}
+@media (max-width:520px){.coach{grid-template-columns:1fr}.coach .photo{height:300px}}
+
+/* membership */
+.member{display:grid;grid-template-columns:1.2fr .8fr;gap:20px}
+.panel{background:var(--coal);border:1px solid var(--charcoal);border-radius:14px;padding:30px;min-width:0}
+.panel h3{font-size:24px;margin-bottom:10px}
+.panel p{color:var(--mute)}
+.checks{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:10px}
+.checks li{display:flex;gap:10px;align-items:flex-start}
+.checks li::before{content:"";flex:none;width:10px;height:10px;margin-top:9px;background:var(--gold);clip-path:polygon(50% 0,100% 100%,0 100%)}
+.soon{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.soon h3{font-size:28px}
+.soon p{color:#2a2410;font-weight:700}
+.soon .btn{margin-top:22px;background:var(--ink);color:var(--gold);border-color:var(--ink)}
+@media (max-width:860px){.member{grid-template-columns:1fr}}
+
+/* rules */
+.rule-lead{display:flex;gap:20px;align-items:center;border:1.5px solid var(--gold);border-radius:14px;padding:24px;margin-bottom:16px;background:var(--coal)}
+.rule-lead h3{color:var(--gold);font-size:24px}
+.rule-lead p{color:#E9E6DE}
+.shoe{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:10px;font-weight:700;font-size:14px}
+.shoe s{color:var(--mute);background:var(--charcoal);padding:2px 10px;border-radius:5px}
+.shoe span.ok{background:var(--gold);color:var(--ink);padding:2px 10px;border-radius:5px}
+.rules{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;list-style:none;padding:0;margin:0;counter-reset:r 1}
+.rules li{display:flex;gap:16px;align-items:flex-start;background:var(--coal);border:1px solid var(--charcoal);border-radius:12px;padding:18px 20px;min-width:0}
+.rules .n{font-family:var(--font-lat);font-weight:700;color:var(--gold);font-size:18px;min-width:28px;line-height:1.6}
+.rules h4{margin:0 0 2px;font-size:17px}
+.rules p{color:var(--mute);font-size:15px}
+@media (max-width:760px){.rules{grid-template-columns:1fr}}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+.phone-card{background:var(--coal);border:1px solid var(--charcoal);border-radius:14px;padding:30px;display:flex;flex-direction:column;gap:18px}
+.phone-big{font-family:var(--font-lat);font-weight:700;font-size:clamp(2.2rem,5vw,3.2rem);color:var(--gold);letter-spacing:1px;direction:ltr;text-align:right;line-height:1;user-select:all}
+.row{display:flex;flex-wrap:wrap;gap:10px}
+.info{display:grid;gap:12px;margin-top:6px}
+.info div{display:flex;gap:12px;align-items:flex-start;color:#E9E6DE}
+.info svg{width:20px;height:20px;color:var(--gold);flex:none;margin-top:4px}
+.form{background:var(--coal);border:1px solid var(--charcoal);border-radius:14px;padding:30px;display:grid;gap:14px}
+.form h3{font-size:22px}
+.form p.hint{color:var(--mute);font-size:14px}
+label{font-weight:700;font-size:14px;display:grid;gap:6px}
+input,select,textarea{font:inherit;color:var(--white);background:var(--ink);border:1px solid var(--charcoal);border-radius:8px;padding:12px 14px;width:100%}
+input:focus,select:focus,textarea:focus{border-color:var(--gold);outline:none}
+textarea{min-height:96px;resize:vertical}
+.toast{font-size:14px;color:var(--gold);min-height:1.4em}
+@media (max-width:860px){.contact-grid{grid-template-columns:1fr}}
+
+/* footer */
+footer{border-top:1px solid var(--charcoal);padding-block:44px 36px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between}
+footer img{height:56px;width:auto}
+footer .tagline{text-align:left;margin:0}
+footer small{color:var(--mute);display:block;width:100%;font-size:13px}
+.socials{display:flex;gap:10px}
+.socials a{width:42px;height:42px;border-radius:8px;border:1px solid var(--charcoal);display:grid;place-items:center;color:var(--gold)}
+.socials a:hover{background:var(--gold-soft)}
+.socials svg{width:20px;height:20px}
+
+/* floating call (phones) */
+.fab{display:none}
+@media (max-width:860px){
+  .fab{display:flex;position:fixed;z-index:40;bottom:calc(16px + env(safe-area-inset-bottom,0px));inset-inline-start:calc(16px + env(safe-area-inset-left,0px));width:56px;height:56px;border-radius:50%;background:var(--gold);color:var(--ink);align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.5)}
+  .fab svg{width:24px;height:24px}
+}
+</style>
+
+</head>
+<body>
+<!-- ======= header ======= -->
+<header class="top" dir="rtl">
+  <div class="wrap">
+    <a class="brand" href="#home" aria-label="APEX FITNESS، الصفحة الرئيسية"><img src="assets/logo-horizontal.svg" alt="APEX FITNESS" width="141" height="42"></a>
+    <nav class="nav" id="nav" aria-label="أقسام الموقع">
+      <a href="#about">عن النادي</a>
+      <a href="#hours">أوقات الدوام</a>
+      <a href="#coaches">المدربون</a>
+      <a href="#gallery">صور النادي</a>
+      <a href="#store">المتجر</a>
+      <a href="#membership">الاشتراك</a>
+      <a href="#rules">الإرشادات</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+    <a class="btn btn-gold call-top" href="tel:+963985301804"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span class="num">0985301804</span></a>
+    <button class="menu-btn" id="menuBtn" aria-controls="nav" aria-expanded="false" aria-label="القائمة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+
+<main dir="rtl">
+<!-- ======= hero ======= -->
+<section class="hero" id="home">
+  <img class="hero-mark" src="assets/icon.svg" alt="" aria-hidden="true">
+  <span class="slash s1" aria-hidden="true"></span><span class="slash s2" aria-hidden="true"></span>
+  <div class="wrap">
+    <div>
+      <span class="place"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>السقيلبية · ريف حماة</span>
+      <h1><span class="l1">كل تمرين</span>خطوة نحو <span class="gold">القمّة</span></h1>
+      <p class="ar-tag">ارتقِ. انطلق. <b>حقّق.</b></p>
+      <p class="tagline">ELEVATE. UNLEASH. ACHIEVE.</p>
+      <div class="hero-cta">
+        <a class="btn btn-gold" href="#hours">شوف أوقات الدوام</a>
+        <a class="btn btn-ghost" href="#contact">تواصل معنا</a>
+      </div>
+    </div>
+    <figure class="hero-photo">
+      <img src="assets/gym-2.webp" alt="ركن الدمبلز والمقاعد داخل صالة APEX FITNESS" width="810" height="1080">
+      <img class="hero-badge" src="assets/logo.svg" alt="" aria-hidden="true">
+    </figure>
+  </div>
+</section>
+
+<!-- ======= about ======= -->
+<section class="block" id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">عن النادي</span>
+        <h2>أهلاً بك في <span class="gold">بيتك الرياضي</span></h2>
+      </div>
+      <p>APEX FITNESS نادي رياضي في السقيلبية، انعمل ليعطيك مكان مرتب ومريح تتمرن فيه بانتظام وتوصل لهدفك خطوة بخطوة.</p>
+    </div>
+    <div class="feat">
+      <article>
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1.1 1 1.8V16h5v-.3c0-.7.4-1.4 1-1.8A6 6 0 0 0 12 3z"/></svg></span>
+        <h3>إضاءة مدروسة</h3>
+        <p>صالة منوّرة ومريحة للعين، لتشوف حركتك وتتمرن براحة.</p>
+      </article>
+      <article>
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h11a3 3 0 1 0-3-3M3 12h16a3 3 0 1 1-3 3M3 16h8"/></svg></span>
+        <h3>تهوية جيدة</h3>
+        <p>هوا متجدد بالصالة، لأن التمرين بمكان مخنوق ما بيكمل.</p>
+      </article>
+      <article>
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 7v10M18 7v10M3 10v4M21 10v4M6 12h12"/></svg></span>
+        <h3>جودة الآلات</h3>
+        <p>أجهزة مختارة بعناية لتمرين آمن وفعّال.</p>
+      </article>
+      <article>
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20a6 6 0 0 1 12 0M14.5 20a4.5 4.5 0 0 1 7-3.7"/></svg></span>
+        <h3>الاعتناء باللعّيبة</h3>
+        <p>والأهم من هاد كلو: إنت. فريق ومدربين جاهزين يساعدوك.</p>
+      </article>
+    </div>
+    <div class="quote"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3v18M12 12h.01"/></svg></span><p>غرف تبديل ملابس <strong>للرجال</strong> و<strong>للسيدات</strong>، مع خزائن لأغراضك.</p></div>
+  </div>
+</section>
+
+<!-- ======= hours ======= -->
+<section class="block alt" id="hours">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">أوقات الدوام</span>
+        <h2>وقت <span class="gold">لكل الناس</span></h2>
+      </div>
+      <p>وقت للبنات، ووقت للرجال، ووقت عائلي.</p>
+    </div>
+    <div class="hours" id="hoursGrid">
+      <article class="slot" data-from="510" data-to="660">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="9" r="5"/><path d="M12 14v7M9 18h6"/></svg></span>
+        <h3>بنات فقط</h3>
+        <p class="time">من <span class="num">8:30</span> صباحاً حتى <span class="num">11:00</span> صباحاً</p>
+      </article>
+      <article class="slot" data-from="690" data-to="870">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="10" cy="14" r="5"/><path d="M14 10l6-6M15 4h5v5"/></svg></span>
+        <h3>رجال فقط</h3>
+        <p class="time">من <span class="num">11:30</span> صباحاً حتى <span class="num">2:30</span> ظهراً</p>
+      </article>
+      <article class="slot" data-from="900" data-to="1320">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="8" cy="7" r="2.6"/><circle cx="16" cy="7" r="2.6"/><path d="M3 20c0-4 2.2-7 5-7s5 3 5 7M11 20c0-4 2.2-7 5-7s5 3 5 7"/></svg></span>
+        <h3>مختلط <small>(عائلي)</small></h3>
+        <p class="time">من <span class="num">3:00</span> عصراً حتى <span class="num">10:00</span> مساءً</p>
+      </article>
+    </div>
+    <div class="hours-foot">
+      <span class="note">نص ساعة بين كل فترة للتنظيف والترتيب</span>
+      <span class="status" id="status" aria-live="polite"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ======= coaches ======= -->
+<section class="block" id="coaches">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">فريق التدريب</span>
+        <h2>مدربون <span class="gold">معتمدون</span></h2>
+      </div>
+      <p>للتدريب الخاص (البرايفت) تواصل مع المدرب مباشرة على رقمه.</p>
+    </div>
+    <div class="coaches">
+      <article class="coach">
+        <div class="photo"><img src="assets/coach-ammar.webp" alt="المدرب عمار ضاهر" loading="lazy"></div>
+        <div class="body">
+          <span class="role">مدرب شخصي</span>
+          <h3>عمار ضاهر</h3>
+          <p class="cred">مدرب شخصي معتمد من أكاديمية IFBB الدولية<span class="lat">IFBB Academy · Dubai</span></p>
+          <div class="contact">
+            <a class="btn btn-gold" href="tel:+963933659784"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span class="num">+963 933 659 784</span></a>
+          </div>
+        </div>
+      </article>
+      <article class="coach">
+        <div class="photo"><img src="assets/coach-george.webp" alt="المدرب جورج موسى" loading="lazy"></div>
+        <div class="body">
+          <span class="role">مدرب شخصي</span>
+          <h3>جورج موسى</h3>
+          <p class="cred">مدرب شخصي معتمد بالتدريب والتغذية الرياضية<span class="lat">IABC Certified</span></p>
+          <p class="extra">تطبيق لتتبّع التقدّم، خاص بالمشتركين معه.</p>
+          <div class="contact">
+            <a class="btn btn-gold" href="tel:+963987461750"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span class="num">0987461750</span></a>
+            <a class="site lat" href="https://georgemousa.com" target="_blank" rel="noopener">georgemousa.com</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ======= gallery ======= -->
+<section class="block alt" id="gallery">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">صور النادي</span>
+        <h2>جوّا <span class="gold">APEX</span></h2>
+      </div>
+      <p>صور حقيقية من صالة النادي بالسقيلبية.</p>
+    </div>
+    <div class="gallery">
+      <figure><img src="assets/gym-3.webp" alt="الصالة الرئيسية مع أجهزة الكيبل والمقاعد"><figcaption>الصالة الرئيسية</figcaption></figure>
+      <figure><img src="assets/gym-2.webp" alt="رف الدمبلز أمام المرآة"><figcaption>ركن الدمبلز</figcaption></figure>
+      <figure><img src="assets/gym-1.webp" alt="جهاز الكيبل المتعدد والإضاءة الخطية في السقف"><figcaption>أجهزة الكيبل</figcaption></figure>
+      <figure><img src="assets/gym-4.webp" alt="أجهزة الأوزان أثناء التركيب"><figcaption>أجهزة الأوزان</figcaption></figure>
+      <figure><img src="assets/gym-5.webp" alt="تركيب الأجهزة داخل الصالة"><figcaption>مرحلة التجهيز</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ======= store ======= -->
+<section class="block" id="store">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">المتجر</span>
+        <h2>كل شي <span class="gold">بيلزم تمرينك</span></h2>
+      </div>
+      <p>ضيف اللي بدك ياه عالسلة، وابعت طلبك عالواتساب، ومنأكدلك السعر والتوفر.</p>
+    </div>
+    <div class="demo-note"><b>نسخة تجريبية:</b> المنتجات المعروضة أمثلة مؤقتة، وبتنستبدل بمنتجات النادي الفعلية وأسعارها.</div>
+    <div class="filters" role="group" aria-label="تصنيف المنتجات" id="filters">
+      <button class="chip" aria-pressed="true" data-cat="all">الكل</button>
+      <button class="chip" aria-pressed="false" data-cat="supp">مكملات</button>
+      <button class="chip" aria-pressed="false" data-cat="apex">منتجات APEX</button>
+      <button class="chip" aria-pressed="false" data-cat="gear">إكسسوارات</button>
+    </div>
+    <div class="products" id="products"></div>
+  </div>
+</section>
+
+<!-- ======= membership ======= -->
+<section class="block alt" id="membership">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">الاشتراك</span>
+        <h2>كيف <span class="gold">بتشترك؟</span></h2>
+      </div>
+    </div>
+    <div class="member">
+      <div class="panel">
+        <h3>خطوات بسيطة</h3>
+        <p>زورنا بالنادي أو اتصل فينا، ومنساعدك تختار الفترة المناسبة إلك.</p>
+        <ul class="checks">
+          <li>اختار فترتك: بنات، رجال، أو مختلط (عائلي).</li>
+          <li>سجّل اشتراكك بالنادي واستلم كرت العضوية.</li>
+          <li>جيب حذاء رياضي نظيف ومنشفة شخصية، وابدأ.</li>
+        </ul>
+      </div>
+      <div class="panel soon">
+        <h3>الأسعار والعروض</h3>
+        <p>تفاصيل الاشتراكات والأسعار بتنعلن قريباً. للاستفسار اتصل فينا.</p>
+        <a class="btn" href="tel:+963985301804"><span class="num">0985301804</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= rules ======= -->
+<section class="block" id="rules">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">إرشادات النادي</span>
+        <h2>بتعاونكم يبقى المكان <span class="gold">نظيفاً ومريحاً</span></h2>
+      </div>
+      <p>وآمناً للجميع. شكراً لتعاونكم، ونتمنى لكم تمريناً ممتعاً.</p>
+    </div>
+    <div class="rule-lead">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3v18M6 13h8v8M6 8h8M14 8l2-2h4v3h-6"/></svg></span>
+      <div>
+        <h3>قبل الدخول.. نرجو تبديل الحذاء</h3>
+        <p>تفضّل بالجلوس على الكرسي عند المدخل وارتداء حذاء رياضي نظيف. شكراً لحرصك على نظافة المكان.</p>
+        <div class="shoe"><s>حذاء الشارع</s><span aria-hidden="true">←</span><span class="ok">حذاء رياضي نظيف</span></div>
+      </div>
+    </div>
+    <ol class="rules">
+      <li><span class="n">02</span><div><h4>اللباس الرياضي</h4><p>نرجو ارتداء لباس رياضي مريح ومناسب أثناء التمرين.</p></div></li>
+      <li><span class="n">03</span><div><h4>النظافة الشخصية</h4><p>اهتمامك بنظافتك الشخصية يجعل التمرين أريح لك ولمن حولك.</p></div></li>
+      <li><span class="n">04</span><div><h4>منشفتك رفيقتك</h4><p>يُرجى إحضار منشفة شخصية ووضعها على الأجهزة والمقاعد.</p></div></li>
+      <li><span class="n">05</span><div><h4>جهاز نظيف لمن بعدك</h4><p>نرجو مسح الجهاز والمقعد بعد الانتهاء من استخدامه.</p></div></li>
+      <li><span class="n">06</span><div><h4>كل وزن في مكانه</h4><p>نشكرك على إعادة الدمبلز والأقراص والبارات إلى أماكنها.</p></div></li>
+      <li><span class="n">07</span><div><h4>سلامتك تهمّنا</h4><p>نرجو عدم رمي الأوزان، والمدرب جاهز لمساعدتك مع أي جهاز جديد.</p></div></li>
+      <li><span class="n">08</span><div><h4>مساحة للجميع</h4><p>نرجو مشاركة الأجهزة بين الجولات، واستخدام السماعات حفاظاً على الهدوء.</p></div></li>
+      <li><span class="n">09</span><div><h4>أغراضك بأمان</h4><p>الخزائن بانتظار أغراضك، لتبقى الأرض والأجهزة مرتّبة.</p></div></li>
+      <li><span class="n">10</span><div><h4>خصوصية الآخرين</h4><p>صوّر تمرينك براحتك، مع مراعاة عدم تصوير الآخرين دون إذنهم.</p></div></li>
+      <li><span class="n">11</span><div><h4>بيئة صحية</h4><p>نرجو عدم التدخين أو تناول الطعام داخل الصالة، والماء دائماً مرحّب به.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======= contact ======= -->
+<section class="block alt" id="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">تواصل معنا</span>
+        <h2>لأي استفسار <span class="gold">يسعدنا تواصلكم</span></h2>
+      </div>
+    </div>
+    <div class="contact-grid">
+      <div class="phone-card">
+        <span class="status">رقم النادي</span>
+        <span class="phone-big" id="phone">0985301804</span>
+        <div class="row">
+          <a class="btn btn-gold" href="tel:+963985301804">اتصل الآن</a>
+          <button class="btn btn-ghost" type="button" id="copyBtn">انسخ الرقم</button>
+        </div>
+        <div class="info">
+          <div><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><span>السقيلبية، ريف حماة، سورية<span id="addrDetail"></span></span></div>
+          <div id="mapRow" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z M9 4v14M15 6v14"/></svg><a id="mapLink" href="#" target="_blank" rel="noopener">افتح الموقع على الخريطة</a></div>
+        </div>
+      </div>
+      <form class="form" id="askForm" novalidate>
+        <h3>اسألنا عن الاشتراك</h3>
+        <p class="hint">املأ الخانات ومنفتحلك رسالة واتساب جاهزة لرقم النادي.</p>
+        <label for="f-name">الاسم
+          <input id="f-name" name="name" autocomplete="name" placeholder="اسمك" required>
+        </label>
+        <label for="f-slot">الفترة التي تناسبك
+          <select id="f-slot" name="slot">
+            <option>بنات فقط (8:30 – 11:00 صباحاً)</option>
+            <option>رجال فقط (11:30 صباحاً – 2:30 ظهراً)</option>
+            <option>مختلط عائلي (3:00 عصراً – 10:00 مساءً)</option>
+          </select>
+        </label>
+        <label for="f-msg">سؤالك
+          <textarea id="f-msg" name="msg" placeholder="مثلاً: شو أنواع الاشتراكات المتوفرة؟"></textarea>
+        </label>
+        <button class="btn btn-gold" type="submit">أرسل عبر واتساب</button>
+        <p class="toast" id="toast" role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer dir="rtl">
+  <div class="wrap">
+    <img src="assets/logo-horizontal.svg" alt="APEX FITNESS" width="188" height="56">
+    <div class="socials" id="socials"></div>
+    <p class="tagline">ELEVATE. UNLEASH. ACHIEVE.</p>
+    <small>© <span class="num" id="yr">2026</span> APEX FITNESS · السقيلبية · <span class="num">0985301804</span></small>
+  </div>
+</footer>
+
+<button class="cart-fab" id="cartFab" type="button" aria-label="سلة الطلب"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"/><circle cx="9" cy="19.5" r="1.4"/><circle cx="17" cy="19.5" r="1.4"/></svg>السلة <span class="count num" id="cartCount">0</span></button>
+
+<div class="drawer" id="drawer" hidden dir="rtl">
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+    <header><h3 id="cartTitle">سلة الطلب</h3><button class="x" id="cartClose" type="button" aria-label="إغلاق">×</button></header>
+    <div class="lines" id="lines"></div>
+    <div class="foot">
+      <label for="c-name">الاسم
+        <input id="c-name" autocomplete="name" placeholder="اسمك">
+      </label>
+      <button class="btn btn-gold" id="sendOrder" type="button">أرسل الطلب عبر واتساب</button>
+      <p>منرد عليك بالسعر والتوفر، والاستلام من النادي.</p>
+      <p class="toast" id="cartToast" role="status"></p>
+    </div>
+  </div>
+</div>
+
+<a class="fab" href="tel:+963985301804" aria-label="اتصل بالنادي"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></a>
+
+<script>
+/* ===== إعدادات الموقع: عدّل هنا عند تأكيد المعلومات ===== */
+const SITE = {
+  phone: "0985301804",
+  whatsapp: "963985301804",      // رقم واتساب بالصيغة الدولية بدون + (تأكد أن الرقم عليه واتساب)
+  addressDetail: "",             // مثال: "، شارع ... قرب ..." (اتركه فارغاً حتى يتأكد)
+  mapUrl: "",                    // رابط Google Maps للنادي
+  instagram: "",                 // رابط حساب إنستغرام
+  facebook: ""                   // رابط صفحة فيسبوك
+};
+
+document.getElementById("yr").textContent = new Date().getFullYear();
+
+/* menu */
+const nav = document.getElementById("nav"), menuBtn = document.getElementById("menuBtn");
+menuBtn.addEventListener("click", () => { const o = nav.classList.toggle("open"); menuBtn.setAttribute("aria-expanded", o); });
+nav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => { nav.classList.remove("open"); menuBtn.setAttribute("aria-expanded", false); }));
+
+/* address, map, socials */
+if (SITE.addressDetail) document.getElementById("addrDetail").textContent = SITE.addressDetail;
+if (SITE.mapUrl) { document.getElementById("mapLink").href = SITE.mapUrl; document.getElementById("mapRow").hidden = false; }
+const ICONS = {
+  instagram: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>',
+  facebook: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v7h4v-7h3l1-4h-4V8z"/></svg>'
+};
+const soc = document.getElementById("socials");
+[["instagram","إنستغرام"],["facebook","فيسبوك"]].forEach(([k,label]) => {
+  if (!SITE[k]) return;
+  const a = document.createElement("a"); a.href = SITE[k]; a.target = "_blank"; a.rel = "noopener"; a.setAttribute("aria-label", label); a.innerHTML = ICONS[k]; soc.appendChild(a);
+});
+
+/* current period by the schedule, in Syria time */
+function syriaMinutes(){
+  try {
+    const p = new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Damascus",hour:"2-digit",minute:"2-digit",hour12:false}).formatToParts(new Date());
+    const h = +p.find(x=>x.type==="hour").value % 24, m = +p.find(x=>x.type==="minute").value;
+    return h*60+m;
+  } catch(e){ const d=new Date(); return d.getHours()*60+d.getMinutes(); }
+}
+function fmt(min){ let h=Math.floor(min/60), m=min%60; const suf = min<720?"صباحاً":min<900?"ظهراً":min<1080?"عصراً":"مساءً"; h = h>12?h-12:h; return h+":"+String(m).padStart(2,"0")+" "+suf; }
+function updateStatus(){
+  const now = syriaMinutes(), slots=[...document.querySelectorAll(".slot")], st=document.getElementById("status");
+  let current=null;
+  slots.forEach(s=>{ s.classList.remove("now"); s.querySelector(".badge")?.remove();
+    if(now>=+s.dataset.from && now<+s.dataset.to) current=s; });
+  if(current){
+    current.classList.add("now");
+    const b=document.createElement("span"); b.className="badge"; b.textContent="الفترة الحالية"; current.appendChild(b);
+    st.innerHTML="حسب الجدول، الوقت الآن ضمن فترة <b>"+current.querySelector("h3").firstChild.textContent.trim()+"</b>";
+  } else {
+    const next = slots.find(s=>now < +s.dataset.from) || slots[0];
+    st.innerHTML="الفترة الجاية: <b>"+next.querySelector("h3").firstChild.textContent.trim()+"</b> الساعة <span class='num'>"+fmt(+next.dataset.from)+"</span>";
+  }
+}
+updateStatus(); setInterval(updateStatus, 60000);
+
+/* copy phone */
+document.getElementById("copyBtn").addEventListener("click", e => {
+  const btn=e.currentTarget;
+  const done=()=>{ btn.textContent="تم النسخ"; setTimeout(()=>btn.textContent="انسخ الرقم",1800); };
+  if (navigator.clipboard) navigator.clipboard.writeText(SITE.phone).then(done).catch(()=>{ selectPhone(); });
+  else selectPhone();
+});
+function selectPhone(){ const r=document.createRange(); r.selectNodeContents(document.getElementById("phone")); const s=getSelection(); s.removeAllRanges(); s.addRange(r); }
+
+/* ===== المتجر: منتجات تجريبية — استبدلها بمنتجات النادي الفعلية =====
+   price: اكتب السعر كنص (مثال "250,000 ل.س") أو اتركه "" ليظهر "السعر عند الطلب" */
+const PRODUCTS = [
+  {id:"whey",    cat:"supp", art:"tub",    name:"بروتين واي",            desc:"عبوة بروتين لما بعد التمرين. (منتج تجريبي)", price:""},
+  {id:"creatine",cat:"supp", art:"jar",    name:"كرياتين مونوهيدرات",     desc:"مسحوق كرياتين بدون نكهة. (منتج تجريبي)", price:""},
+  {id:"mass",    cat:"supp", art:"tub",    name:"ماس جينر",              desc:"لزيادة السعرات والكتلة. (منتج تجريبي)", price:""},
+  {id:"preworkout",cat:"supp",art:"jar",   name:"بري وورك آوت",          desc:"طاقة قبل التمرين. (منتج تجريبي)", price:""},
+  {id:"shaker",  cat:"apex", art:"shaker", name:"شيكر APEX",             desc:"شيكر بشعار النادي. (منتج تجريبي)", price:""},
+  {id:"bottle",  cat:"apex", art:"bottle", name:"مطرة ماء APEX",         desc:"مطرة ماء بشعار النادي. (منتج تجريبي)", price:""},
+  {id:"tank",    cat:"apex", art:"tank",   name:"شيال تمرين APEX",       desc:"Stringer بشعار النادي. (منتج تجريبي)", price:""},
+  {id:"towel",   cat:"apex", art:"towel",  name:"منشفة تمرين APEX",       desc:"منشفة للأجهزة والمقاعد. (منتج تجريبي)", price:""},
+  {id:"gloves",  cat:"gear", art:"gloves", name:"كفوف تمرين",            desc:"لقبضة أثبت على البار. (منتج تجريبي)", price:""},
+  {id:"belt",    cat:"gear", art:"belt",   name:"حزام رفع أثقال",         desc:"دعم للظهر بالأوزان الثقيلة. (منتج تجريبي)", price:""},
+  {id:"straps",  cat:"gear", art:"straps", name:"أربطة معصم",            desc:"لتمارين السحب الثقيلة. (منتج تجريبي)", price:""},
+  {id:"band",    cat:"gear", art:"band",   name:"أحبال مقاومة",          desc:"للإحماء والتمرين بالبيت. (منتج تجريبي)", price:""}
+];
+const ICON_MARK = '<path fill="#D4AF37" d="M50 26l22 40-10-4-12-22-8 11-7 3z M33 61l16-7 1.4-2 3 5.7L29 68z"/>';
+const ART = {
+  tub:   '<svg viewBox="0 0 100 100"><rect x="22" y="18" width="56" height="12" rx="3" fill="#2B2B2B"/><rect x="18" y="28" width="64" height="62" rx="8" fill="#1d1d1d" stroke="#D4AF37" stroke-width="1.5"/><rect x="18" y="44" width="64" height="30" fill="#D4AF37"/><text x="50" y="64" text-anchor="middle" font-family="Rajdhani,sans-serif" font-weight="700" font-size="13" fill="#0D0D0D">APEX</text></svg>',
+  jar:   '<svg viewBox="0 0 100 100"><rect x="30" y="20" width="40" height="10" rx="3" fill="#D4AF37"/><rect x="26" y="30" width="48" height="58" rx="7" fill="#1d1d1d" stroke="#D4AF37" stroke-width="1.5"/><rect x="26" y="48" width="48" height="22" fill="#2B2B2B"/><text x="50" y="64" text-anchor="middle" font-family="Rajdhani,sans-serif" font-weight="700" font-size="11" fill="#D4AF37">APEX</text></svg>',
+  shaker:'<svg viewBox="0 0 100 100"><rect x="38" y="10" width="24" height="8" rx="2" fill="#D4AF37"/><path d="M32 18h36l-2 10H34z" fill="#2B2B2B"/><path d="M34 28h32l-4 62H38z" fill="#1d1d1d" stroke="#D4AF37" stroke-width="1.5"/><g transform="translate(0,12)">'+ICON_MARK+'</g></svg>',
+  bottle:'<svg viewBox="0 0 100 100"><rect x="42" y="8" width="16" height="10" rx="2" fill="#2B2B2B"/><path d="M40 18h20v6c6 3 8 6 8 12v52a4 4 0 0 1-4 4H36a4 4 0 0 1-4-4V36c0-6 2-9 8-12z" fill="#D4AF37"/><g transform="translate(0,14)"><path fill="#0D0D0D" d="M50 26l22 40-10-4-12-22-8 11-7 3z M33 61l16-7 1.4-2 3 5.7L29 68z"/></g></svg>',
+  tank:  '<svg viewBox="0 0 100 100"><path d="M34 10h8c0 10 16 10 16 0h8l-2 22c6 4 8 10 8 18v40H28V50c0-8 2-14 8-18z" fill="#1d1d1d" stroke="#D4AF37" stroke-width="1.5"/><g transform="translate(0,10) scale(1)">'+ICON_MARK+'</g></svg>',
+  towel: '<svg viewBox="0 0 100 100"><rect x="18" y="22" width="64" height="60" rx="4" fill="#1d1d1d" stroke="#D4AF37" stroke-width="1.5"/><rect x="18" y="70" width="64" height="5" fill="#D4AF37"/><g transform="translate(0,-6)">'+ICON_MARK+'</g></svg>',
+  gloves:'<svg viewBox="0 0 100 100"><path d="M30 46V24a4 4 0 0 1 8 0v18-24a4 4 0 0 1 8 0v24-26a4 4 0 0 1 8 0v26-22a4 4 0 0 1 8 0v34c0 14-8 24-20 24s-18-8-22-18l-6-14a4 4 0 0 1 7-4z" fill="#1d1d1d" stroke="#D4AF37" stroke-width="1.5"/><rect x="32" y="74" width="34" height="10" rx="2" fill="#D4AF37"/></svg>',
+  belt:  '<svg viewBox="0 0 100 100"><path d="M10 40c20-8 60-8 80 0v22c-20-8-60-8-80 0z" fill="#1d1d1d" stroke="#D4AF37" stroke-width="1.5"/><rect x="42" y="36" width="16" height="30" rx="2" fill="none" stroke="#D4AF37" stroke-width="3"/></svg>',
+  straps:'<svg viewBox="0 0 100 100"><path d="M20 30h46a14 14 0 0 1 0 28H40" fill="none" stroke="#D4AF37" stroke-width="8" stroke-linecap="round"/><path d="M20 30v40" stroke="#2B2B2B" stroke-width="8" stroke-linecap="round"/></svg>',
+  band:  '<svg viewBox="0 0 100 100"><ellipse cx="50" cy="50" rx="34" ry="22" fill="none" stroke="#D4AF37" stroke-width="6"/><ellipse cx="50" cy="56" rx="26" ry="16" fill="none" stroke="#5a5a5a" stroke-width="5"/></svg>'
+};
+const CAT_LABEL = {supp:"مكملات", apex:"منتجات APEX", gear:"إكسسوارات"};
+const grid = document.getElementById("products");
+grid.innerHTML = PRODUCTS.map(p => `
+  <article class="prod" data-cat="${p.cat}">
+    <div class="art">${ART[p.art]}<span class="tag">${CAT_LABEL[p.cat]}</span></div>
+    <div class="pbody">
+      <h3>${p.name}</h3>
+      <p>${p.desc}</p>
+      <span class="price">${p.price || "السعر عند الطلب"}</span>
+      <button class="btn btn-ghost add" type="button" data-id="${p.id}">أضف للسلة</button>
+    </div>
+  </article>`).join("");
+document.getElementById("filters").addEventListener("click", e => {
+  const b = e.target.closest(".chip"); if(!b) return;
+  document.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", c===b));
+  grid.querySelectorAll(".prod").forEach(p => p.hidden = !(b.dataset.cat==="all" || p.dataset.cat===b.dataset.cat));
+});
+
+let cart = {};
+try { cart = JSON.parse(localStorage.getItem("apex-cart")||"{}") || {}; } catch(e){ cart = {}; }
+const save = () => { try { localStorage.setItem("apex-cart", JSON.stringify(cart)); } catch(e){} };
+const drawer = document.getElementById("drawer");
+function renderCart(){
+  const ids = Object.keys(cart).filter(id => cart[id]>0 && PRODUCTS.find(p=>p.id===id));
+  document.getElementById("cartCount").textContent = ids.reduce((s,id)=>s+cart[id],0);
+  document.getElementById("lines").innerHTML = ids.length ? ids.map(id => {
+    const p = PRODUCTS.find(x=>x.id===id);
+    return `<div class="line"><span class="nm">${p.name}</span><div class="qty"><button type="button" data-dec="${id}" aria-label="إنقاص">−</button><span class="num">${cart[id]}</span><button type="button" data-inc="${id}" aria-label="زيادة">+</button></div></div>`;
+  }).join("") : '<p class="empty">السلة فاضية. ضيف منتجات من المتجر.</p>';
+}
+grid.addEventListener("click", e => {
+  const b = e.target.closest(".add"); if(!b) return;
+  cart[b.dataset.id] = (cart[b.dataset.id]||0)+1; save(); renderCart();
+  b.textContent = "انضاف ✓"; setTimeout(()=>b.textContent="أضف للسلة",1200);
+});
+document.getElementById("lines").addEventListener("click", e => {
+  const inc=e.target.dataset.inc, dec=e.target.dataset.dec;
+  if(inc) cart[inc]++; if(dec) cart[dec]=Math.max(0,cart[dec]-1);
+  save(); renderCart();
+});
+document.getElementById("cartFab").addEventListener("click", () => { drawer.hidden=false; document.getElementById("cartClose").focus(); });
+document.getElementById("cartClose").addEventListener("click", () => drawer.hidden=true);
+drawer.addEventListener("click", e => { if(e.target===drawer) drawer.hidden=true; });
+document.addEventListener("keydown", e => { if(e.key==="Escape") drawer.hidden=true; });
+document.getElementById("sendOrder").addEventListener("click", () => {
+  const ids = Object.keys(cart).filter(id=>cart[id]>0), t=document.getElementById("cartToast");
+  if(!ids.length){ t.textContent="ضيف منتج واحد عالأقل."; return; }
+  const name = document.getElementById("c-name").value.trim();
+  const text = "مرحباً APEX FITNESS، بدي اطلب:\n" + ids.map(id=>"• "+PRODUCTS.find(p=>p.id===id).name+" × "+cart[id]).join("\n") + (name?"\nالاسم: "+name:"");
+  const a=document.createElement("a"); a.href="https://wa.me/"+SITE.whatsapp+"?text="+encodeURIComponent(text); a.target="_blank"; a.rel="noopener"; document.body.appendChild(a); a.click(); a.remove();
+  t.textContent="جهّزنا طلبك على واتساب. إذا ما انفتح، اتصل على "+SITE.phone+".";
+});
+renderCart();
+
+/* inquiry → WhatsApp */
+document.getElementById("askForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const name=document.getElementById("f-name"), toast=document.getElementById("toast");
+  if(!name.value.trim()){ toast.textContent="اكتب اسمك لنعرف مين عم يسأل."; name.focus(); return; }
+  const text = "مرحباً APEX FITNESS\nالاسم: "+name.value.trim()+"\nالفترة: "+document.getElementById("f-slot").value+(document.getElementById("f-msg").value.trim()?"\nالسؤال: "+document.getElementById("f-msg").value.trim():"");
+  const url = "https://wa.me/"+SITE.whatsapp+"?text="+encodeURIComponent(text);
+  const a=document.createElement("a"); a.href=url; a.target="_blank"; a.rel="noopener"; document.body.appendChild(a); a.click(); a.remove();
+  toast.textContent="جهّزنا رسالتك على واتساب. إذا ما انفتح، اتصل على "+SITE.phone+".";
+});
+</script>
+
+</body>
+</html>
