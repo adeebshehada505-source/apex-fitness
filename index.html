@@ -180,20 +180,26 @@ section.block{padding-block:88px}
 
 /* coaches */
 .coaches{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-.coach{position:relative;overflow:hidden;background:var(--coal);border:1px solid var(--charcoal);border-radius:14px;display:grid;grid-template-columns:42% 1fr;min-height:360px}
-.coach .photo{position:relative;background:radial-gradient(circle at 50% 70%,rgba(212,175,55,.35),transparent 65%);display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
-.coach .photo img{width:100%;height:100%;object-fit:cover;object-position:top center}
-.coach .body{padding:28px 26px;display:flex;flex-direction:column;gap:12px;min-width:0}
-.coach .role{color:var(--gold);font-weight:700;font-size:14px}
-.coach h3{font-size:30px}
+.coach{position:relative;overflow:hidden;background:var(--coal);border:1px solid var(--charcoal);border-radius:16px;display:flex;flex-direction:column;min-width:0}
+.coach .photo{position:relative;height:460px;overflow:hidden;background:
+  radial-gradient(ellipse 70% 60% at 50% 78%,rgba(212,175,55,.42),transparent 70%),
+  linear-gradient(180deg,#1b1b1b,#101010)}
+.coach .photo::before{content:"";position:absolute;inset:0;background:url("assets/icon.svg") center 62%/78% no-repeat;opacity:.10}
+.coach .photo .sl{position:absolute;top:-40px;width:10px;height:300px;background:var(--gold);transform:rotate(28deg);inset-inline-end:14%}
+.coach .photo .sl+.sl{inset-inline-end:calc(14% + 26px);width:4px;opacity:.5}
+.coach .photo img{position:absolute;inset:auto 0 0 0;margin-inline:auto;height:94%;width:auto;max-width:100%;object-fit:contain;object-position:bottom center;filter:drop-shadow(0 18px 30px rgba(0,0,0,.6))}
+.coach .photo::after{content:"";position:absolute;inset:auto 0 0 0;height:38%;background:linear-gradient(180deg,transparent,var(--coal) 88%)}
+.coach .name{position:absolute;z-index:2;bottom:16px;inset-inline:24px}
+.coach .role{display:inline-block;background:var(--gold);color:var(--ink);font-weight:800;font-size:13px;padding:2px 10px;border-radius:5px;margin-bottom:6px}
+.coach h3{font-size:clamp(28px,3.4vw,38px);text-shadow:0 2px 14px rgba(0,0,0,.7)}
+.coach .body{padding:6px 24px 24px;display:flex;flex-direction:column;gap:12px;flex:1;min-width:0}
 .coach .cred{border-inline-start:3px solid var(--gold);padding-inline-start:12px;color:#E9E6DE;font-size:15px}
-.coach .cred .lat{display:block;color:var(--mute);font-size:14px}
+.coach .cred .lat{display:block;color:var(--mute);font-size:14px;text-align:right}
 .coach .extra{color:var(--mute);font-size:14px}
-.coach .contact{margin-top:auto;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.coach .contact{margin-top:auto;display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
 .coach .contact .btn{padding:10px 16px;font-size:15px}
 .coach .site{color:var(--gold);font-size:15px;text-decoration:none}
-@media (max-width:960px){.coaches{grid-template-columns:1fr}}
-@media (max-width:520px){.coach{grid-template-columns:1fr}.coach .photo{height:300px}}
+@media (max-width:860px){.coaches{grid-template-columns:1fr}.coach .photo{height:420px}}
 
 /* membership */
 .member{display:grid;grid-template-columns:1.2fr .8fr;gap:20px}
@@ -386,10 +392,8 @@ footer small{color:var(--mute);display:block;width:100%;font-size:13px}
     </div>
     <div class="coaches">
       <article class="coach">
-        <div class="photo"><img src="assets/coach-ammar.webp" alt="المدرب عمار ضاهر" loading="lazy"></div>
+        <div class="photo"><span class="sl" aria-hidden="true"></span><span class="sl" aria-hidden="true"></span><img src="assets/coach-ammar.webp" alt="المدرب عمار ضاهر"><div class="name"><span class="role">مدرب شخصي</span><h3>عمار ضاهر</h3></div></div>
         <div class="body">
-          <span class="role">مدرب شخصي</span>
-          <h3>عمار ضاهر</h3>
           <p class="cred">مدرب شخصي معتمد من أكاديمية IFBB الدولية<span class="lat">IFBB Academy · Dubai</span></p>
           <div class="contact">
             <a class="btn btn-gold" href="tel:+963933659784"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span class="num">+963 933 659 784</span></a>
@@ -397,10 +401,8 @@ footer small{color:var(--mute);display:block;width:100%;font-size:13px}
         </div>
       </article>
       <article class="coach">
-        <div class="photo"><img src="assets/coach-george.webp" alt="المدرب جورج موسى" loading="lazy"></div>
+        <div class="photo"><span class="sl" aria-hidden="true"></span><span class="sl" aria-hidden="true"></span><img src="assets/coach-george.webp" alt="المدرب جورج موسى"><div class="name"><span class="role">مدرب شخصي</span><h3>جورج موسى</h3></div></div>
         <div class="body">
-          <span class="role">مدرب شخصي</span>
-          <h3>جورج موسى</h3>
           <p class="cred">مدرب شخصي معتمد بالتدريب والتغذية الرياضية<span class="lat">IABC Certified</span></p>
           <p class="extra">تطبيق لتتبّع التقدّم، خاص بالمشتركين معه.</p>
           <div class="contact">
